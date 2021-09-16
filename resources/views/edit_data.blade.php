@@ -14,11 +14,11 @@
 <div class="container">
   <a href="{{('/')}}" class="btn btn-primary my-3 ">Show Data</a>
 
-  <form class="" action="{{('/store-data')}}" method="post">
+  <form class="" action="{{('/update-data/'.$editData->id)}}" method="post">
     @csrf
     <div class="form-group">
       <label for="">Name</label>
-      <input type="text" class="form-controll" name="name" value="" placeholder="Enter Name">
+      <input type="text" class="form-controll" name="name" value="{{$editData->name}}" placeholder="Enter Name">
       @error('name')
       <span class="text-danger">{{$message}}</span>
       @enderror
@@ -26,13 +26,13 @@
     <br>
     <div class="form-group">
       <label for="">Email</label>
-      <input type="text" class="form-controll" name="email" value="" placeholder="Enter Email">
+      <input type="text" class="form-controll" name="email" value="{{$editData->email}}" placeholder="Enter Email">
       @error('email')
       <span class="text-danger">{{$message}}</span>
       @enderror
     </div>
     <br>
-    <input type="submit" class="btn btn-primary" name="" value="Save">
+    <input type="submit" class="btn btn-primary" name="" value="Update">
   </form>
 
 </div>
